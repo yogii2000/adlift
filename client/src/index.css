@@ -1,0 +1,15 @@
+
+.border-grey{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+}
+.white-nowrap{
+    white-space: nowrap;
+}
+.form-control:focus, .form-select:focus{
+    box-shadow: none;
+}
+.product-list{
+    height: calc(100vh - 150px);
+    overflow-y: scroll;
+}
