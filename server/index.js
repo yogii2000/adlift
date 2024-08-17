@@ -16,12 +16,24 @@ app.use('/api/products', productRoutes);
 // MongoDB Connection
 const MONGO_URI = 'mongodb+srv://yogeshsharma:Yogesh1234@adlift-db.6ms8d77.mongodb.net/?retryWrites=true&w=majority&appName=adLift-DB';
 // , { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect(MONGO_URI ,{ useNewUrlParser: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch((error) => console.log('MongoDB connection error:', error));
+const connectDB = async () => {
+  try {
+    await mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log('MongoDB connected');
+  } catch (error) {
+    console.log('MongoDB connection error:', error);
+    process.exit(1); // Exit process with failure
+  }
+};
 
 // Start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (require.main === module) {
+  connectDB().then(() => {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  });
+}
+
+module.exports = connectDB;
