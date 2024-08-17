@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use('/api/products', productRoutes);
 
 // MongoDB Connection
-const MONGO_URI = 'mongodb+srv://yogeshsharma:Yogesh%401234@adlift-db.6ms8d77.mongodb.net/?retryWrites=true&w=majority&appName=adLift-DB';
+const MONGO_URI = 'mongodb+srv://yogeshsharma:Yogesh1234@adlift-db.6ms8d77.mongodb.net/?retryWrites=true&w=majority&appName=adLift-DB';
 // , { useNewUrlParser: true, useUnifiedTopology: true }
 mongoose.connect(MONGO_URI ,{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
