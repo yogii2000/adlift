@@ -14,9 +14,9 @@ app.use(bodyParser.json());
 app.use('/api/products', productRoutes);
 
 // MongoDB Connection
-const MONGO_URI = 'mongodb://localhost:27017/';
+const MONGO_URI = 'mongodb://localhost:27017/test';
 // , { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect(MONGO_URI)
+mongoose.connect(MONGO_URI ,{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch((error) => console.log('MongoDB connection error:', error));
 
