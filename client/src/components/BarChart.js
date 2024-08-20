@@ -41,7 +41,7 @@ const BarChart = ({bardata}) => {
     labels: labels,
     datasets: [
       {
-        label: 'Sales',
+        label: 'Product',
         data: counts,
         backgroundColor: 'rgba(75, 192, 192, 0.6)',
         borderColor: 'rgba(75, 192, 192, 1)',

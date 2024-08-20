@@ -87,10 +87,15 @@ function App() {
                 <div className="">
                   <div className="d-flex gap-3">
                     <div className="w-50">
-                    <BarChart bardata={filteredData}/>
+                      {
+                        filteredData.length>0 && <BarChart bardata={filteredData}/>
+                      }
+                    
                     </div>
                   <div className="w-50">
-                  <PieChart piedata={filteredData}/>
+                  {
+                        filteredData.length>0 &&  <PieChart piedata={filteredData}/>
+                      }
                   </div>
                   
                   </div>
